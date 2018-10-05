@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>binary tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <p>
+        Convert Decimal to Binary<br><br>
+
+        Take number (we'll use 56) and follow these steps<br><br>
+
+        56/2 = 28 with remainder of 0<br>
+        28/2 = 14 with remainder of 0<br>
+        14/2 = 7 with remainder of 0<br>
+        7/2 = 3.5 with remainder of 1<br>
+        then remove the half left over and continue dividing<br>
+        3/2 = 1.5 with remainder of 1<br>
+        remove half again<br>
+        1/2 = .5 with remainder of 1<br>
+        stop at 1/2<br><br>
+
+        then write remainders backwords (111000<sub>2</sub>)<br><br>
+
+        and if you convert that you get 56<sub>10</sub><br><br>
+    </p>
+    <hr>
+    <p>
+        Convert Binary to Decimal<br><br>
+
+        Take binary number (we'll use 111000<sub>2</sub>) and follow these steps<br>
+        read binary numbers from right to left<br><br>
+
+        the first number is 2^0 (1) the second is 2^1 (2) the third is 2^2 (4) and so on (for each position add
+        another to the power of 2)<br><br>
+        so lets take 111000 and convert it<br><br>
+        <table>
+            <tr>
+                <td>32</td>
+                <td>16</td>
+                <td>8</td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td> 1</td>
+                <td> 1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        </table><br>
+
+        so for each 0 you ignore the number above it and for each 1 you add the numbers above them together<br>
+        32+16+8=56<br><br>
+        and if we convert 111000 to decimal we get 56<sub>10</sub><br><br>
+    </p>
+    <hr>
+    <br>
+    <input name="toBinary" type="text" maxlength="512" id="toBinary" class="searchField" placeholder="Decimal To Binary" />
+    <button onclick="toBinary();">meme</button>
+    <p id="toResult"></p>
+    <input name="fromBinary" type="text" maxlength="512" id="fromBinary" class="searchField" placeholder="Binary to Decimal" />
+    <button onclick="fromBinary();">meme</button>
+    <p id="fromResult"></p>
+    <br>
+    <br>
+    <p>(c) 2018 gdifiore</p>
+</body>
+
+</html>

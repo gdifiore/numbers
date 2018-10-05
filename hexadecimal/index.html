@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>hexadecimal tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <p>
+        Convert Binary to Hexadecimal<br><br>
+
+        Take a binary number (we'll use 111000<sub>2</sub>) and split it into sets of 4 digits, reading from
+        right to left (if it's not split into perfect sets of 4 you can add 0s to fill the empty spots or just leave it)<br><br>
+        | 11 | 1000 |<br><br>
+        now like in binary to decimal, the right-most digit is 1, second is 2, then 4 and then 8. for each 1 in
+        the binary set add the number that it aligns up with with the others e.g. <br><br>
+        <table>
+            <tr>
+                <td>|</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+                <td>|</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>|</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>8</td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+                <td>|</td>
+                <td>8</td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+                <td></td>
+            </tr>
+        </table><br><br>
+        then for each division add all the numbers with a one above it together (but not between divisions)<br>
+        | 2+1 | 8 |<br>
+        so 111000<sub>2</sub> in hexadecimal is 38<sub>16</sub><br><br>
+
+        and if we convert 111000<sub>2</sub> to hexadecimal we get 38<sub>16</sub><br>
+
+        *note that that 38<sub>16</sub> is not the same as 38<sub>10</sub> in decimal<br>
+    </p>
+    <hr>
+    <p>
+        Convert Hexadecimal to Binary<br><br>
+        Here's a small table to hexadecimal numbers and their decimal equivalents
+        <table>
+            <tbody>
+                <tr>
+                    <td>Hex<br>base 16</td>
+                    <td>Decimal<br>base 10</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>11</td>
+
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>12</td>
+
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>13</td>
+
+                </tr>
+                <tr>
+                    <td>E</td>
+                    <td>14</td>
+
+                </tr>
+                <tr>
+                    <td>F</td>
+                    <td>15</td>
+
+                </tr>
+                <tr>
+            </tbody>
+        </table>
+        <br>
+        let's take a hex number, say F4<sub>16</sub> and convert it to binary<br>
+        first convert any letters to their number equivalent so F<sub>16</sub> is 15<br><br>
+        now we have to make 15 and 4 out of 4 binary digits<br>
+
+        15 = 1111<sub>2</sub> which is 8+4+2+1 = 15<br>
+        and 4 is 0100 which is 4 = 4<br>
+        so F4<sub>16</sub> in binary is 11110100<sub>2</sub><br><br>
+        and if we check with my converter F4<sub>16</sub> is 11110100<sub>2</sub> in binary.<br><br>
+    </p>
+    <hr>
+    <br>
+    <input name="binToHex" type="text" maxlength="512" id="binToHex" class="searchField" placeholder="Binary To Hexadecimal" />
+    <button onclick="binToHex();">meme</button>
+    <p id="toResultHex"></p>
+    <input name="hexToBin" type="text" maxlength="512" id="hexToBin" class="searchField" placeholder="Hexadecimal to Binary" />
+    <button onclick="hexToBin();">meme</button>
+    <p id="fromResultHex"></p>
+    <br>
+    <br>
+    <p>(c) 2018 gdifiore</p>
+</body>
+
+</html>
